@@ -22,17 +22,19 @@
 // Execute `rustlings hint tests5` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+// I AM DONE
 
 /// # Safety
-///
+///在 Rust 中，unsafe 关键字用于标记那些编译器无法保证内存安全的代码。使用 unsafe 意味着你需要手动确保代码的安全性。
+///unsafe 函数和代码块允许你执行一些通常被 Rust 编译器禁止的操作，比如直接操作指针。
 /// The `address` must contain a mutable reference to a valid `u32` value.
 unsafe fn modify_by_address(address: usize) {
     // TODO: Fill your safety notice of the code block below to match your
     // code's behavior and the contract of this function. You may use the
     // comment of the test below as your format reference.
     unsafe {
-        todo!("Your code goes here")
+        let ptr = address as *mut u32;
+        *ptr = 0xAABBCCDD;
     }
 }
 
